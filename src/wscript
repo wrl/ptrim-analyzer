@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+
+top = ".."
+
+def build(bld):
+	objs = []
+	obj = lambda src: objs.append(src)
+
+	obj("analyzer.c")
+	obj("audio_jack.c")
+    
+	bld.program(
+		target="analyzer",
+		includes="private",
+		source=objs,
+
+		use="JACK",
+		lib=["m", "pthread"])

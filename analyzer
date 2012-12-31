@@ -1,0 +1,10 @@
+#!/bin/sh
+
+ANALYZER=./build/src/analyzer
+
+if [ ! -x $ANALYZER ]; then
+	echo "build with ./waf configure && ./waf";
+	exit 1;
+fi
+
+$ANALYZER $*

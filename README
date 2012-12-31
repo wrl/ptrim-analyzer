@@ -1,0 +1,31 @@
+         _       _                         _                 
+    _ __| |_ _ _(_)_ __ ___ __ _ _ _  __ _| |_  _ ______ _ _ 
+   | '_ \  _| '_| | '  \___/ _` | ' \/ _` | | || |_ / -_) '_|
+   | .__/\__|_| |_|_|_|_|  \__,_|_||_\__,_|_|\_, /__\___|_|  
+   |_|                                       |__/            
+   
+    this is a simple level meter that displays on the plasmatrim
+    LED strip (http://www.plasmatrim.com/).
+
+    it is currently linux-only, due to the dependence on /dev/hidraw,
+    but could be easily ported with, say, signal11's hidapi. the JACk
+    dependency may be more difficult to tease out, but you could probably
+    shim in any callback-based audio API without too much trouble.
+
+	build with:
+		
+		./waf configure
+		./waf
+
+    use with:
+    
+        ./analyzer /dev/hidraw{N}
+
+    it will create a JACK port into which audio can be routed.
+
+    feature wishlist:
+        * better windowing (i.e. not dependent on blocksize)
+        * spectrum analyzer (FFT or wavelet decomposition)
+        * EBU R 128 loudness metering
+
+    comments and party invitations to wrl@illest.net

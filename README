@@ -12,10 +12,10 @@
     dependency may be more difficult to tease out, but you could probably
     shim in any callback-based audio API without too much trouble.
 
-	build with:
+    build with:
 		
-		./waf configure
-		./waf
+        ./waf configure
+        ./waf
 
     use with:
     
